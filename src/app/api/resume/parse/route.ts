@@ -52,30 +52,42 @@ export async function POST(req: NextRequest) {
     const pdfData = await parser.getText();
     const extractedText = pdfData.text;
 
-    // 3. Extract Structured JSON via AI
-    const { object: profile } = await generateObject({
-      model: openai("gpt-4o-mini"),
-      system: "You are an expert resume parser. Extract the candidate's core details accurately.",
-      prompt: `Extract structured profile data from this resume text:\n\n${extractedText}`,
-      schema: z.object({
-        skills: z.array(z.string()).describe("List of technical and soft skills"),
-        projects: z.array(z.object({
-          name: z.string(),
-          description: z.string()
-        })).describe("List of key projects"),
-        experience: z.array(z.object({
-          company: z.string(),
-          role: z.string(),
-          duration: z.string(),
-          highlights: z.array(z.string())
-        })),
-        education: z.array(z.object({
-          institution: z.string(),
-          degree: z.string(),
-          year: z.string()
-        }))
-      })
-    });
+    // 3. Extract Structured JSON via AI (or mock if no key)
+    let profile;
+    if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY.includes("your-openai-api-key")) {
+      console.warn("Using Mock Resume Parsing - No valid OpenAI API key found.");
+      profile = {
+        skills: ["Mock Skill 1", "Mock Skill 2", "TypeScript", "React"],
+        projects: [{ name: "Demo Project", description: "A project created during demo mode." }],
+        experience: [{ company: "Demo Corp", role: "Software Intern", duration: "3 months", highlights: ["Built a demo app", "Learned mocking"] }],
+        education: [{ institution: "Demo University", degree: "B.S. Computer Science", year: "2025" }]
+      };
+    } else {
+      const { object } = await generateObject({
+        model: openai("gpt-4o-mini"),
+        system: "You are an expert resume parser. Extract the candidate's core details accurately.",
+        prompt: `Extract structured profile data from this resume text:\n\n${extractedText}`,
+        schema: z.object({
+          skills: z.array(z.string()).describe("List of technical and soft skills"),
+          projects: z.array(z.object({
+            name: z.string(),
+            description: z.string()
+          })).describe("List of key projects"),
+          experience: z.array(z.object({
+            company: z.string(),
+            role: z.string(),
+            duration: z.string(),
+            highlights: z.array(z.string())
+          })),
+          education: z.array(z.object({
+            institution: z.string(),
+            degree: z.string(),
+            year: z.string()
+          }))
+        })
+      });
+      profile = object;
+    }
 
     // 4. Save to DB if user is logged in
     if (session?.user?.id) {

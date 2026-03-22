@@ -10,6 +10,7 @@ Internship Copilot is a production-ready, full-stack platform designed to automa
 - **⚖️ Skill Gap Analysis**: Identifies exactly which skills you're missing for a specific role and provides a strategy to acquire them.
 - **📧 Automated AI Outreach**: Generates personalized cold emails and handles follow-ups via SendGrid, powered by company data enrichment.
 - **🧩 Chrome Extension**: A companion tool to save job listings directly from LinkedIn or other sites into your copilot dashboard.
+- **🛠️ Demo Mode**: Project works out-of-the-box for UI testing even without API keys (uses mocked AI responses if keys are missing from `.env`).
 
 ## 🛠️ Tech Stack
 
@@ -61,6 +62,15 @@ Internship Copilot is a production-ready, full-stack platform designed to automa
 5. **Run the development server**:
    ```bash
    npm run dev
+   ```
+
+6. **Run Background Workers** (in separate terminals):
+   ```bash
+   # For job aggregation/scraping
+   npm run workers:scrape
+
+   # For email outreach
+   npm run workers:outreach
    ```
 
 ## 🏗️ Architecture

@@ -14,6 +14,29 @@ export async function POST(req: Request) {
   // if (!session?.user) return new Response("Unauthorized", { status: 401 });
 
   const { messages } = await req.json();
+  
+  // Demo/Mock Mode if API key is not set
+  if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY.includes("your-openai-api-key")) {
+    console.warn("Using Mock AI Response - No valid OpenAI API key found.");
+    return new Response(JSON.stringify({
+      id: "mock-response",
+      role: "assistant",
+      content: "This is a simulated response (Demo Mode). I've analyzed your input and it looks great! Use the 'submitProfileData' tool to proceed with this demo.",
+      toolInvocations: [
+        {
+          toolCallId: "call_123",
+          toolName: "submitProfileData",
+          args: {
+            skills: ["React", "TypeScript", "Node.js"],
+            experience: "Frontend Developer with 2 years of experience",
+            preferredRoles: ["Fullstack Engineer", "Frontend Developer"],
+            location: "Remote",
+            remotePreferred: true
+          }
+        }
+      ]
+    }), { headers: { "Content-Type": "application/json" } });
+  }
 
   const result = streamText({
     model: openai("gpt-4o-mini"),
