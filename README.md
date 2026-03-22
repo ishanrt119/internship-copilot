@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 AI-Powered Internship Copilot
 
-## Getting Started
+Internship Copilot is a production-ready, full-stack platform designed to automate and streamline the internship hunt for students. Leveraging OpenAI's GPT-4o, background workers, and smart matching engines, it transforms the often overwhelming manual search into a highly efficient, automated pipeline.
 
-First, run the development server:
+## 🚀 Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **🤖 AI Chatbot Onboarding**: A conversational agent that gathers your skills, experience, and preferences to build a dynamic profile.
+- **📄 Smart Resume Parsing**: Instantly extract text and structured data from your PDF resumes using AI-guided parsing.
+- **🎯 Intelligent Job Matching**: Matches your profile against thousands of aggregated internships with a "Match Score" and detailed explanation.
+- **⚖️ Skill Gap Analysis**: Identifies exactly which skills you're missing for a specific role and provides a strategy to acquire them.
+- **📧 Automated AI Outreach**: Generates personalized cold emails and handles follow-ups via SendGrid, powered by company data enrichment.
+- **🧩 Chrome Extension**: A companion tool to save job listings directly from LinkedIn or other sites into your copilot dashboard.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js 15+](https://nextjs.org) (App Router)
+- **AI Models**: OpenAI GPT-4o & GPT-4o-mini
+- **Database**: PostgreSQL with [Prisma ORM](https://prisma.io)
+- **Queues & Background Workers**: [BullMQ](https://bullmq.io) & [Redis](https://redis.io)
+- **Authentication**: [NextAuth.js](https://next-auth.js.org)
+- **Scraping**: Playwright (for Internshala, Indeed, etc.)
+- **Styling**: Tailwind CSS, Shadcn UI, Framer Motion
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Getting Started
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- **Node.js**: v18+
+- **PostgreSQL**: Local or hosted instance.
+- **Redis**: Local or hosted instance (for background workers).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/ishanrt119/internship-copilot
+   cd internship-copilot
+   ```
 
-## Deploy on Vercel
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Environment Setup**:
+   Create a `.env` file from the provided boilerplate and fill in your API keys:
+   ```env
+   DATABASE_URL="postgresql://..."
+   REDIS_URL="redis://..."
+   OPENAI_API_KEY="sk-..."
+   SENDGRID_API_KEY="SG...."
+   NEXTAUTH_SECRET="..."
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Database Migration**:
+   ```bash
+   npx prisma generate
+   npx prisma db push
+   ```
+
+5. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+## 🏗️ Architecture
+
+The platform uses a decoupled architecture for high reliability:
+- **API Layer**: Handles chat, resume parsing, and dashboard data.
+- **Worker Layer**: Background workers handle the heavy lifting (web scraping, email generation, enrichment) without blocking the main thread.
+- **Queue System**: BullMQ ensures that job requests are processed even during high traffic or third-party API rate limits.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
