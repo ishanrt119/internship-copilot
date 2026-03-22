@@ -95,7 +95,7 @@ export async function POST(req: NextRequest) {
         where: { id: session.user.id },
         data: {
           resumeUrl: resumeUrl || undefined,
-          skills: profile.skills,
+          skills: profile.skills as any,
           experience: JSON.stringify(profile.experience),
         }
       });

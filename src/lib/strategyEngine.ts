@@ -10,7 +10,7 @@ export async function getApplicationStrategy(userId: string) {
   const sorted = [...matches].sort((a, b) => b.matchScore - a.matchScore);
 
   const highProbability = sorted.filter(m => m.matchScore >= 80);
-  const quickApply = sorted.filter(m => m.missingSkills.length === 0);
+  const quickApply = sorted.filter(m => (m.missingSkills as string[] || []).length === 0);
   const stretch = sorted.filter(m => m.matchScore >= 50 && m.matchScore < 80);
 
   return {

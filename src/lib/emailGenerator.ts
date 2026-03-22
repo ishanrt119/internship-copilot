@@ -6,7 +6,7 @@ export async function generateColdEmail(userProfile: any, jobDetails: any, compa
   const prompt = `
 Candidate Profile:
 Name: ${userProfile.name}
-Skills: ${userProfile.skills.join(", ")}
+Skills: ${(userProfile.skills as string[] || []).join(", ")}
 Experience: ${userProfile.experience}
 
 Job Target:

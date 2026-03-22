@@ -64,7 +64,7 @@ export const scraperWorker = new Worker('job-aggregation', async (job) => {
               location: j.location,
               applyUrl: j.applyUrl,
               description: j.description,
-              requiredSkills: j.requiredSkills,
+              requiredSkills: j.requiredSkills as any,
               source: j.source,
               isRemote: j.isRemote,
             }

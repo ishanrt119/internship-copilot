@@ -73,9 +73,9 @@ After calling the tool, thank them and tell them you are now finding matches for
             await prisma.user.update({
               where: { id: session.user.id },
               data: {
-                skills,
+                skills: skills as any,
                 experience,
-                preferredRoles,
+                preferredRoles: preferredRoles as any,
                 location,
                 remotePreferred,
                 isOnboarded: true

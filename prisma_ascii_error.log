@@ -1,0 +1,204 @@
+node.exe : 
+prisma:cli:bin Failed 
+to initialize the 
+command state: Error: 
+ENOENT: no such file 
+or directory, open 'C:\
+Users\HP\AppData\Roamin
+g\prisma-nodejs\Config\
+commands.json' +2739ms
+At C:\nvm4w\nodejs\npx.
+ps1:29 char:3
++   & $NODE_EXE 
+$NPX_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (prisma:cli:bi   
+ n ...s.json' +2739    
+ms:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+prisma:config:defineCon
+fig [default]: '{\n  
+"loadedFromFile": 
+null\n}' +1971ms
+prisma:config:defineCon
+fig [config.schema]: 
+'prisma/schema.prisma' 
++1ms
+prisma:config:defineCon
+fig 
+[config.datasource]: 
+'{\n  "url": "postgresq
+l://user:password@local
+host:5432/internship_co
+pilot"\n}' +1ms
+prisma:config:defineCon
+fig 
+[config.migrations]: 
+'{\n  "path": "prisma/m
+igrations"\n}' +0ms
+prisma:config:loadConfi
+gFromFile Config file 
+loaded in 173.20ms +3ms
+prisma:config:PrismaCon
+fig Parsing 
+PrismaConfigInternal: 
+'{\n' +
+  '  "loadedFromFile": 
+null,\n' +
+  '  "schema": "prisma/
+schema.prisma",\n' +
+  '  "datasource": 
+{\n' +
+  '    "url": "postgres
+ql://user:password@loca
+lhost:5432/internship_c
+opilot"\n' +
+  '  },\n' +
+  '  "migrations": 
+{\n' +
+  '    "path": 
+"prisma/migrations"\n' 
++
+  '  }\n' +
+  '}' +3ms
+prisma:config:PrismaCon
+fig Short-circuit: 
+input is already a 
+PrismaConfigInternal 
+object +0ms
+Loaded Prisma config 
+from prisma.config.ts.
+
+prisma:engines 
+binaries to download 
+schema-engine +2904ms
+prisma:getSchema 
+Reading schema from 
+single file C:\Users\HP
+\OneDrive\Desktop\Study
+\Test\internship-copilo
+t\prisma\schema.prisma 
++182ms
+prisma:getSchema 
+Reading schema from 
+single file C:\Users\HP
+\OneDrive\Desktop\Study
+\Test\internship-copilo
+t\prisma\schema.prisma 
++1ms
+prisma:getConfig Using 
+getConfig Wasm +50ms
+prisma:cli:checkpoint 
+Error from tryToReadDat
+aFromSchema() while 
+processing the schema. 
+This is not a fatal 
+error. It will 
+continue without the 
+processed data. +26ms
+prisma:cli:checkpoint {
+  "name": 
+"GetConfigError"
+} +1ms
+prisma:cli:checkpoint r
+unCheckpointClientCheck
+(): Execution time for 
+getting info: 
+81.36520000000019 ms 
++0ms
+prisma:getSchema 
+Reading schema from 
+single file C:\Users\HP
+\OneDrive\Desktop\Study
+\Test\internship-copilo
+t\prisma\schema.prisma 
++50ms
+Prisma schema loaded 
+from 
+prisma\schema.prisma.
+prisma:getConfig Using 
+getConfig Wasm +4ms
+Error: GetConfigError: 
+Prisma schema 
+validation - 
+(get-config wasm)
+Error code: P1012
+error: The datasource 
+property `url` is no 
+longer supported in 
+schema files. Move 
+connection URLs for 
+Migrate to 
+`prisma.config.ts` and 
+pass either `adapter` 
+for a direct database 
+connection or 
+`accelerateUrl` for 
+Accelerate to the 
+`PrismaClient` 
+constructor. See https:
+//pris.ly/d/config-data
+source and https://pris
+.ly/d/prisma7-client-co
+nfig
+  -->  
+prisma\schema.prisma:3
+   | 
+ 2 |   provider = 
+"postgresql"
+ 3 |   url      = 
+env("DATABASE_URL")
+   | 
+
+Validation Error 
+Count: 1
+[Context: getConfig]
+
+Prisma CLI Version : 
+7.5.0
+    at C:\Users\HP\OneD
+rive\Desktop\Study\Test
+\internship-copilot\nod
+e_modules\prisma\build\
+index.js:203:1073
+    at e.with (C:\Users
+\HP\OneDrive\Desktop\St
+udy\Test\internship-cop
+ilot\node_modules\prism
+a\build\index.js:163:41
+043)
+    at hy (C:\Users\HP\
+OneDrive\Desktop\Study\
+Test\internship-copilot
+\node_modules\prisma\bu
+ild\index.js:203:1043)
+    at HT (C:\Users\HP\
+OneDrive\Desktop\Study\
+Test\internship-copilot
+\node_modules\prisma\bu
+ild\index.js:222:1318)
+    at e.parse (C:\User
+s\HP\OneDrive\Desktop\S
+tudy\Test\internship-co
+pilot\node_modules\pris
+ma\build\index.js:4095:
+530)
+    at async e.parse (C
+:\Users\HP\OneDrive\Des
+ktop\Study\Test\interns
+hip-copilot\node_module
+s\prisma\build\index.js
+:1060:2319)
+    at async Ior (C:\Us
+ers\HP\OneDrive\Desktop
+\Study\Test\internship-
+copilot\node_modules\pr
+isma\build\index.js:465
+1:136)

@@ -9,7 +9,7 @@ export async function matchJobsForUser(userId: string) {
     include: { matches: true },
   });
 
-  if (!user || user.skills.length === 0) {
+  if (!user || (user.skills as string[] || []).length === 0) {
     throw new Error("User has incomplete profile for matching");
   }
 
@@ -29,9 +29,9 @@ export async function matchJobsForUser(userId: string) {
       model: openai("gpt-4o-mini"),
       system: "You are an AI Job Matching Engine. Analyze the candidate profile against the job description.",
       prompt: `Candidate Profile:
-Skills: ${user.skills.join(", ")}
+Skills: ${(user.skills as string[] || []).join(", ")}
 Experience: ${user.experience}
-Preferred Roles: ${user.preferredRoles.join(", ")}
+Preferred Roles: ${(user.preferredRoles as string[] || []).join(", ")}
 Remote Preferred: ${user.remotePreferred}
 Location: ${user.location}
 
