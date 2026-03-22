@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Internship Copilot",
+  "version": "1.0",
+  "description": "Save jobs and get instant match scores",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost:3000/*",
+    "https://*.linkedin.com/*",
+    "https://*.internshala.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.linkedin.com/jobs/*",
+        "https://internshala.com/internship/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}

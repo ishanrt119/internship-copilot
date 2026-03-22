@@ -1,0 +1,59 @@
+src/app/api/chat/route.ts(42,9): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Type '({ skills, experience, preferredRoles, location, remotePreferred }: { skills: string[]; experience: string; preferredRoles: string[]; location?: string; remotePreferred: boolean; }) => Promise<...>' is not assignable to type 'undefined'.
+src/app/api/chat/route.ts(69,17): error TS2551: Property 'toDataStreamResponse' does not exist on type 'StreamTextResult<{ submitProfileData: Tool<{ skills: string[]; experience: string; preferredRoles: string[]; location?: string | undefined; remotePreferred: boolean; }, "Profile saved successfully to the database!" | "Profile extracted successfully (user not logged in).">; }, Output<...>>'. Did you mean 'toTextStreamResponse'?
+src/app/api/resume/parse/route.ts(9,8): error TS1192: Module '"C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/pdf-parse/dist/pdf-parse/esm/index"' has no default export.
+src/app/dashboard/page.tsx(18,37): error TS7006: Parameter 'o' implicitly has an 'any' type.
+src/app/dashboard/page.tsx(46,30): error TS7006: Parameter 'outreach' implicitly has an 'any' type.
+src/app/jobs/page.tsx(30,46): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/app/jobs/page.tsx(34,46): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/app/jobs/page.tsx(76,31): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/components/ChatbotOnboarding.tsx(3,25): error TS2307: Cannot find module 'ai/react' or its corresponding type declarations.
+src/components/ChatbotOnboarding.tsx(37,24): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/components/ChatbotOnboarding.tsx(52,40): error TS7006: Parameter 'tool' implicitly has an 'any' type.
+src/lib/matchingEngine.ts(17,44): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/lib/prisma.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'PrismaClient'.
+src/lib/queue.ts(6,67): error TS2322: Type 'Redis' is not assignable to type 'ConnectionOptions'.
+  Type 'Redis' is not assignable to type 'ClusterOptions | Redis | Cluster'.
+    Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/Redis").default' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/Redis").default'.
+      Types of property 'options' are incompatible.
+        Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/redis/RedisOptions").RedisOptions' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/redis/RedisOptions").RedisOptions'.
+          Type 'RedisOptions' is not assignable to type 'CommonRedisOptions'.
+            Types of property 'Connector' are incompatible.
+              Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/connectors/ConnectorConstructor").default | undefined' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/connectors/ConnectorConstructor").default | undefined'.
+                Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/connectors/ConnectorConstructor").default' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/connectors/ConnectorConstructor").default'.
+                  Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/connectors/AbstractConnector").default' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/connectors/AbstractConnector").default'.
+                    Property 'connecting' is protected but type 'AbstractConnector' is not a class derived from 'AbstractConnector'.
+src/lib/queue.ts(7,65): error TS2322: Type 'Redis' is not assignable to type 'ConnectionOptions'.
+  Type 'Redis' is not assignable to type 'ClusterOptions | Redis | Cluster'.
+    Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/Redis").default' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/Redis").default'.
+      Types of property 'options' are incompatible.
+        Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/redis/RedisOptions").RedisOptions' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/redis/RedisOptions").RedisOptions'.
+          Type 'RedisOptions' is not assignable to type 'CommonRedisOptions'.
+            Types of property 'Connector' are incompatible.
+              Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/connectors/ConnectorConstructor").default | undefined' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/connectors/ConnectorConstructor").default | undefined'.
+                Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/connectors/ConnectorConstructor").default' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/connectors/ConnectorConstructor").default'.
+                  Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/connectors/AbstractConnector").default' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/connectors/AbstractConnector").default'.
+                    Property 'connecting' is protected but type 'AbstractConnector' is not a class derived from 'AbstractConnector'.
+src/workers/jobScraper.ts(86,6): error TS2322: Type 'Redis' is not assignable to type 'ConnectionOptions'.
+  Type 'Redis' is not assignable to type 'ClusterOptions | Redis | Cluster'.
+    Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/Redis").default' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/Redis").default'.
+      Types of property 'options' are incompatible.
+        Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/redis/RedisOptions").RedisOptions' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/redis/RedisOptions").RedisOptions'.
+          Type 'RedisOptions' is not assignable to type 'CommonRedisOptions'.
+            Types of property 'Connector' are incompatible.
+              Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/connectors/ConnectorConstructor").default | undefined' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/connectors/ConnectorConstructor").default | undefined'.
+                Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/connectors/ConnectorConstructor").default' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/connectors/ConnectorConstructor").default'.
+                  Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/connectors/AbstractConnector").default' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/connectors/AbstractConnector").default'.
+                    Property 'connecting' is protected but type 'AbstractConnector' is not a class derived from 'AbstractConnector'.
+src/workers/outreachWorker.ts(82,6): error TS2322: Type 'Redis' is not assignable to type 'ConnectionOptions'.
+  Type 'Redis' is not assignable to type 'ClusterOptions | Redis | Cluster'.
+    Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/Redis").default' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/Redis").default'.
+      Types of property 'options' are incompatible.
+        Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/redis/RedisOptions").RedisOptions' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/redis/RedisOptions").RedisOptions'.
+          Type 'RedisOptions' is not assignable to type 'CommonRedisOptions'.
+            Types of property 'Connector' are incompatible.
+              Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/connectors/ConnectorConstructor").default | undefined' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/connectors/ConnectorConstructor").default | undefined'.
+                Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/connectors/ConnectorConstructor").default' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/connectors/ConnectorConstructor").default'.
+                  Type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/ioredis/built/connectors/AbstractConnector").default' is not assignable to type 'import("C:/Users/HP/OneDrive/Desktop/Study/Test/internship-copilot/node_modules/bullmq/node_modules/ioredis/built/connectors/AbstractConnector").default'.
+                    Property 'connecting' is protected but type 'AbstractConnector' is not a class derived from 'AbstractConnector'.
